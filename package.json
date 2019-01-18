@@ -1,0 +1,23 @@
+{
+  "name": "flow-button",
+  "version": "1.0.0",
+  "description": "This package simply creates a button which triggers a Microsoft Flow with a HTTP trigger.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/androidpage/flow-button.git"
+  },
+  "keywords": [
+    "flow",
+    "microsoft"
+  ],
+  "author": "Andrew Page ~ Genesys IT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/androidpage/flow-button/issues"
+  },
+  "homepage": "https://github.com/androidpage/flow-button#readme"
+}
