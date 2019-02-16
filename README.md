@@ -1,7 +1,7 @@
 # json-form-builder
 This is a React component which will build a form from a JSON definition. Basically I got sick of writing complex forms in standard React with change event bindings etc. as I felt like I was perpetually repeating myself. This is the result of my laziness ;)
 
-Note: This is the very first, largely unfinished version. There is no testing to speak of and lots of features I would like to implement. The core functionality does work but there's a lot left to do. 
+Note: This is the very first, largely unfinished version. There is no testing to speak of and lots of features I would like to implement. The core functionality does work but there's a lot left to do. You'll see some references to SharePoint in the form schema below - these are ignored for the moment. I started out building a SharePoint specific solution but decided to make the form builder it's own module and make a SharePoint version as an abstraction on top of it. I need to revise the schema; it's on the to-do list!
 
 # Use
 ```jsx
@@ -244,7 +244,7 @@ export enum EDisplayMode{
 }
 ```
 
-# Form Schema
+# Field Schema
 ```json
 {
     "$id": "https://pbo.vic.gov.au/schemas/field.schema.json",  
