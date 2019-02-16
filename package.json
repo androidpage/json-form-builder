@@ -1,6 +1,6 @@
 {
   "name": "@genesysit/react-json-form",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "This package creates a form from a JSON template.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,15 +24,17 @@
     "url": "git+https://github.com/androidpage/json-form-builder.git"
   },
   "keywords": [
-    "flow",
-    "microsoft"
+    "form",
+    "react",
+    "json",
+    "office-ui-fabric-react"
   ],
   "author": "Andrew Page ~ Genesys IT",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/androidpage/flow-button/issues"
+    "url": "https://github.com/androidpage/json-form-builder/issues"
   },
-  "homepage": "https://github.com/androidpage/flow-button#readme",
+  "homepage": "https://github.com/androidpage/json-form-builder#readme",
   "dependencies": {
     "ajv": "^6.7.0",
     "office-ui-fabric-react": "^5.134.0",
