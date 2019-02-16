@@ -63,3 +63,6 @@ typings/
 #build
 dist/
 dev/
+
+#mac files
+*.DS_Store
