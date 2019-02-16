@@ -1,6 +1,6 @@
+import { PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { IPartialTheme } from 'office-ui-fabric-react/lib/Styling';
 import { IReactJsonFormProps } from '../index';
-import { PanelType } from 'office-ui-fabric-react/lib/Panel';
 // tslint:disable
 const defaultTheme: IPartialTheme = {
   palette: {

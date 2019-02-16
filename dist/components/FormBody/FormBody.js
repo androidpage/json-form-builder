@@ -14,9 +14,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var styles = require("./FormBody.module.scss");
 var FormField_1 = require("../FormField/FormField");
 var FormSection_1 = require("../FormSection/FormSection");
+var styles = require("./FormBody.module.scss");
 var FormBody = /** @class */ (function (_super) {
     __extends(FormBody, _super);
     function FormBody() {

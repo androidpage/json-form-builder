@@ -31,10 +31,10 @@ export default class FormField extends React.Component<IFormFieldProps, IFormFie
     switch(def.type){
       case EFieldType.checkbox: {
         const options: ICheckboxProps = {
+          className: styles.checkboxField,
           disabled: def.readOnly || false,
           label: this.props.definition.label,
           onChange: this.onFieldChange.bind(this),
-          className: styles.checkboxField
         }
         return (
           <div className={ styles.formFieldContainer }>
@@ -61,10 +61,10 @@ export default class FormField extends React.Component<IFormFieldProps, IFormFie
       case EFieldType.date: {
         const options: IDatePickerProps = {
           disabled: def.readOnly || false,
+          isRequired: def.required || false,
           label: def.label,
           onSelectDate: this.onFieldChange.bind(this, undefined),
           strings: DayPickerStrings,
-          isRequired: def.required || false
         }
         return (
           <div className={ styles.formFieldContainer }>
@@ -76,10 +76,10 @@ export default class FormField extends React.Component<IFormFieldProps, IFormFie
       case EFieldType.datetime: {
         const options: IDatePickerProps = {
           disabled: def.readOnly || false,
+          isRequired: def.required || false,
           label: def.label,
           onSelectDate: this.onFieldChange.bind(this, undefined),
           strings: DayPickerStrings,
-          isRequired: def.required || false
         }
         return (
           <div className={ styles.formFieldContainer }>

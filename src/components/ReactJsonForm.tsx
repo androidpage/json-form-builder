@@ -1,23 +1,23 @@
+import { IPanelHeaderRenderer, IPanelProps, Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
+import { Spinner } from 'office-ui-fabric-react/lib/Spinner';
 import { IPartialTheme, loadTheme } from 'office-ui-fabric-react/lib/Styling';
 import * as React from 'react';
-import { EDisplayMode } from '../shared/DisplayMode';
-import FormButtons from './FormButtons/FormButtons';
-import FormBody from './FormBody/FormBody';
-import * as styles from './ReactJsonForm.module.scss';
 import { IFieldDefinition } from '../interfaces/field.interface';
 import { IFormDefinition, IFormSectionDefinition } from '../interfaces/form.interface';
 import defaults from '../shared/Defaults';
-import { SchemaValidator } from '../shared/SchemaValidator';
-import { Spinner } from 'office-ui-fabric-react/lib/Spinner';
-import { Panel, PanelType, IPanelHeaderRenderer, IPanelProps } from 'office-ui-fabric-react/lib/Panel';
+import { EDisplayMode } from '../shared/DisplayMode';
 import { replacer } from '../shared/Replacer';
+import { SchemaValidator } from '../shared/SchemaValidator';
+import FormBody from './FormBody/FormBody';
+import FormButtons from './FormButtons/FormButtons';
+import * as styles from './ReactJsonForm.module.scss';
 
 import fieldDef = require('../schemas/field.schema.json');
 import formDef = require('../schemas/form.schema.json');
 
 export interface IReactJsonFormProps<T extends object = {}>{
   definition: IFormDefinition;
-  maxWidth?: number;
+  maxWidth?: number; // Unused at the moment
   theme?: IPartialTheme;
   displayMode?: EDisplayMode;
   isOpen?: boolean;
@@ -48,8 +48,8 @@ export class ReactJsonForm<T extends object = {}> extends React.Component<IReact
 
     this.state = {
       definition: null,
+      formObject: {},
       isValid: false,
-      formObject: {}
     }
 
     const theme = this.props.theme || defaults.theme;

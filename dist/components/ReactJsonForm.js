@@ -48,17 +48,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var Panel_1 = require("office-ui-fabric-react/lib/Panel");
+var Spinner_1 = require("office-ui-fabric-react/lib/Spinner");
 var Styling_1 = require("office-ui-fabric-react/lib/Styling");
 var React = require("react");
-var DisplayMode_1 = require("../shared/DisplayMode");
-var FormButtons_1 = require("./FormButtons/FormButtons");
-var FormBody_1 = require("./FormBody/FormBody");
-var styles = require("./ReactJsonForm.module.scss");
 var Defaults_1 = require("../shared/Defaults");
-var SchemaValidator_1 = require("../shared/SchemaValidator");
-var Spinner_1 = require("office-ui-fabric-react/lib/Spinner");
-var Panel_1 = require("office-ui-fabric-react/lib/Panel");
+var DisplayMode_1 = require("../shared/DisplayMode");
 var Replacer_1 = require("../shared/Replacer");
+var SchemaValidator_1 = require("../shared/SchemaValidator");
+var FormBody_1 = require("./FormBody/FormBody");
+var FormButtons_1 = require("./FormButtons/FormButtons");
+var styles = require("./ReactJsonForm.module.scss");
 var fieldDef = require("../schemas/field.schema.json");
 var formDef = require("../schemas/form.schema.json");
 var ReactJsonForm = /** @class */ (function (_super) {
@@ -67,8 +67,8 @@ var ReactJsonForm = /** @class */ (function (_super) {
         var _this = _super.call(this, props) || this;
         _this.state = {
             definition: null,
+            formObject: {},
             isValid: false,
-            formObject: {}
         };
         var theme = _this.props.theme || Defaults_1.default.theme;
         if (theme) {

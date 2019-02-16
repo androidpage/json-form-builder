@@ -1,7 +1,7 @@
 {
-  "name": "react-json-form",
-  "version": "1.0.1",
-  "description": "This package simply creates a button which triggers a Microsoft Flow with a HTTP trigger.",
+  "name": "@genesysit/react-json-form",
+  "version": "0.0.1",
+  "description": "This package creates a form from a JSON template.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/androidpage/flow-button.git"
+    "url": "git+https://github.com/androidpage/json-form-builder.git"
   },
   "keywords": [
     "flow",

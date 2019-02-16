@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { IFieldDefinition } from '../../interfaces/field.interface';
 import { IFormDefinition, IFormSectionDefinition } from '../../interfaces/form.interface';
-import * as styles from './FormBody.module.scss';
 import FormField from '../FormField/FormField';
 import FormSection from '../FormSection/FormSection';
+import * as styles from './FormBody.module.scss';
 
 export interface IFormBodyProps{
     definition: IFormDefinition;

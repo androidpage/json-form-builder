@@ -45,10 +45,10 @@ var FormField = /** @class */ (function (_super) {
         switch (def.type) {
             case field_interface_1.EFieldType.checkbox: {
                 var options = {
+                    className: styles.checkboxField,
                     disabled: def.readOnly || false,
                     label: this.props.definition.label,
                     onChange: this.onFieldChange.bind(this),
-                    className: styles.checkboxField
                 };
                 return (React.createElement("div", { className: styles.formFieldContainer },
                     React.createElement(Checkbox_1.Checkbox, __assign({}, options))));
@@ -67,10 +67,10 @@ var FormField = /** @class */ (function (_super) {
             case field_interface_1.EFieldType.date: {
                 var options = {
                     disabled: def.readOnly || false,
+                    isRequired: def.required || false,
                     label: def.label,
                     onSelectDate: this.onFieldChange.bind(this, undefined),
                     strings: DatePicker_2.DayPickerStrings,
-                    isRequired: def.required || false
                 };
                 return (React.createElement("div", { className: styles.formFieldContainer },
                     React.createElement(DatePicker_1.DatePicker, __assign({}, options))));
@@ -78,10 +78,10 @@ var FormField = /** @class */ (function (_super) {
             case field_interface_1.EFieldType.datetime: {
                 var options = {
                     disabled: def.readOnly || false,
+                    isRequired: def.required || false,
                     label: def.label,
                     onSelectDate: this.onFieldChange.bind(this, undefined),
                     strings: DatePicker_2.DayPickerStrings,
-                    isRequired: def.required || false
                 };
                 return (React.createElement("div", { className: styles.formFieldContainer },
                     React.createElement(DatePicker_1.DatePicker, __assign({}, options)),

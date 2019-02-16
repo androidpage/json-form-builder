@@ -1,8 +1,8 @@
+import { PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { IPartialTheme } from 'office-ui-fabric-react/lib/Styling';
 import * as React from 'react';
-import { EDisplayMode } from '../shared/DisplayMode';
 import { IFormDefinition } from '../interfaces/form.interface';
-import { PanelType } from 'office-ui-fabric-react/lib/Panel';
+import { EDisplayMode } from '../shared/DisplayMode';
 export interface IReactJsonFormProps<T extends object = {}> {
     definition: IFormDefinition;
     maxWidth?: number;

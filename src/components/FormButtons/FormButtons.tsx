@@ -1,5 +1,5 @@
+import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import * as React from 'react';
-import { PrimaryButton, DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import * as styles from './FormButtons.module.scss';
 
 export interface IFormButtonsProps{

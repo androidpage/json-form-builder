@@ -13,8 +13,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
 var Button_1 = require("office-ui-fabric-react/lib/Button");
+var React = require("react");
 var styles = require("./FormButtons.module.scss");
 var FormButtons = /** @class */ (function (_super) {
     __extends(FormButtons, _super);
