@@ -1,0 +1,202 @@
+{
+
+    "$id": "https://pbo.vic.gov.au/schemas/form.schema.json", 
+    "type": "object", 
+    "properties": {
+    "title": {
+        "$id": "/properties/title", 
+        "type": "string", 
+        "title": "Displayed Form Title", 
+        "default": "", 
+        "examples": [
+        "string"
+        ]
+    },
+    "description":{
+        "$id": "/properties/description",
+        "type":"string",
+        "title":"Displayed form description",
+        "default":"",
+        "examples": [
+            "Please fill the below form, then click submit."
+        ]
+    },
+    "siteUrl":{
+        "$id":"/properties/siteUrl",
+        "type":"string",
+        "title":"SharePoint Site URL",
+        "examples":[
+            "https://{TENNANCY}.sharepoint.com/sites/{SITENAME}"
+        ]
+    },
+    "allowDraft":{
+        "$id":"/properties/allowDraft",
+        "type":"boolean",
+        "title":"Allow saving as draft. Requires a boolean type column named 'Draft' or specified in draftField in list",
+        "default":false
+    },
+    "draftField":{
+        "$id":"/properties/draftField",
+        "type":"string",
+        "title":"The name of the boolean list column which stores whether or not a record is a draft",
+        "default":"Draft",
+        "examples":[
+            "Draft",
+            "isDraft"
+        ]
+    },
+    "formLinkValue":{
+        "$id":"/properties/formLinkValue",
+        "type":"string",
+        "title":"Custom path to list item form, column values can be inserted using square brackets and the field name eg. [Id]",
+        "default":"",
+        "examples":[
+            "/forms/myformname/[id]",
+            "https://example.com/forms/myformname/[id]"
+        ]
+    },
+    "formLinkField":{
+        "$id":"/properties/formLinkField",
+        "type":"string",
+        "title":"The name of the string list column in which to save a custom link to the list item.",
+        "default":"FormLink",
+        "examples":[
+            "FormLink"
+        ]
+    },
+    "readOnlyFieldName":{
+        "$id":"/properties/readOnlyFieldName",
+        "type":"string",
+        "title":"Name of field to check for values which mark form as read only",
+        "default":"ReadOnly",
+        "examples":[
+            "ReadOnly",
+            "Status"
+        ]
+    },
+    "readOnlyFieldValues":{
+        "$id":"/properties/readOnlyFieldName",
+        "type":"string",
+        "title":"Value of field to check for values which mark form as read only",
+        "default":"True",
+        "examples":[
+            "Read Only"
+        ]
+    },
+    "allowWriteFieldName":{
+        "$id":"/properties/readOnlyFieldName",
+        "type":"string",
+        "title":"Name of field to check for values which mark form allow editing",
+        "default":"ReadOnly",
+        "examples":[
+            "ReadOnly",
+            "Status",
+            "AllowEdit"
+        ]
+    },
+    "allowWriteFieldValues":{
+        "$id":"/properties/readOnlyFieldName",
+        "type":"string",
+        "title":"Value of field to check for values which mark form allow editing",
+        "default":"True",
+        "examples":[
+            "Allow Editing"
+        ]
+    },
+    "listName": {
+        "$id": "/properties/listName",
+        "type": "string",
+        "title": "SharePoint List Name",
+        "default": "",
+        "examples": [
+            "MyList",
+            "My List",
+            "My_List"
+        ]
+    }, 
+    "sections": {
+        "type": "array", 
+        "items": {
+        "type": "object", 
+            "properties": {
+                "title": {
+                    "type": "string", 
+                    "title": "The section Title", 
+                    "default": "", 
+                    "examples": [
+                        "Section 1.",
+                        "Contact Information"
+                    ]
+                },
+                "description":{
+                    "type":"string",
+                    "title":"Section description",
+                    "default":""
+                },
+                "columns":{
+                    "type": "integer",
+                    "title": "Number of grid columns to split fields across",
+                    "default": 1
+                },
+                "fields": {
+                    "type": "array", 
+                    "title": "The fields in this section",
+                        "items":{
+                            "$ref": "field.schema.json"
+                        },
+                        "default":[]
+                }
+            }
+        }
+    }, 
+    "fields": {
+        "type": "array", 
+            "title": "The fields in this section",
+                "items":{
+                    "$ref": "field.schema.json"
+                },
+                "default":{}
+    }, 
+    "validators": {
+        "$id": "/properties/validators", 
+        "type": "array", 
+        "items": {
+        "$id": "/properties/validators/items", 
+        "type": "object", 
+        "properties": {
+            "name": {
+            "$id": "/properties/validators/items/properties/name", 
+            "type": "string", 
+            "title": "The validator name", 
+            "default": "", 
+            "examples": [
+                "CharLimit255"
+            ]
+            }, 
+            "regex": {
+            "$id": "/properties/validators/items/properties/regex", 
+            "type": "string", 
+            "title": "The Regex validation string", 
+            "default": "", 
+            "examples": [
+                "^.{0,255}$"
+            ]
+            },
+            "errorMessage": {
+                "$id": "/properties/validators/items/properties/errorMessage", 
+                "type": "string", 
+                "title": "The validation error message to display",
+                "default": "A validation error has ocurred",
+                "examples":[
+                    "Error: Please keep this field below 255 characters in length"
+                ]
+            }
+        }
+        }
+    }
+    }, 
+    "required": [
+        "title",
+        "listName"
+    ]
+}

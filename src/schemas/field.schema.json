@@ -1,0 +1,262 @@
+{
+    "$id": "https://pbo.vic.gov.au/schemas/field.schema.json",  
+    "type": "object", 
+    "properties": {
+        "label": {
+            "$id": "/properties/label", 
+            "type": "string", 
+            "title": "The Label Schema", 
+            "default": "", 
+            "examples": [
+            "Field Title",
+            "First Name",
+            "Email Address"
+            ]
+        }, 
+        "type": {
+            "$id": "/properties/type",
+            "type": "string", 
+            "enum": [
+                "text", 
+                "multiline-text", 
+                "dropdown", 
+                "date", 
+                "datetime", 
+                "choice",
+                "uploader",
+                "checkbox",
+                "info-note",
+                "grid-placeholder"
+            ]
+        }, 
+        "fieldName": {
+            "$id": "/properties/fieldName", 
+            "type": "string", 
+            "title": "The Fieldname Schema ", 
+            "default": "", 
+            "examples": [
+            "string"
+            ]
+        }, 
+        "placeholder": {
+            "$id": "/properties/placeholder", 
+            "type": "string", 
+            "title": "The Placeholder Schema ", 
+            "default": "", 
+            "examples": [
+            "string"
+            ]
+        }, 
+        "default": {
+            "$id": "/properties/default", 
+            "type": "string", 
+            "title": "The Default Schema ", 
+            "default": "", 
+            "examples": [
+            "string"
+            ]
+        }, 
+        "options": {
+            "$id": "/properties/options", 
+            "type": "array", 
+            "items": {
+            "$id": "/properties/options/items", 
+            "type": "object", 
+            "properties": {
+                "key": {
+                    "$id": "/properties/options/items/properties/key", 
+                    "type": "string",
+                    "title": "The Key Schema ", 
+                    "default": 0, 
+                    "examples": [
+                        1
+                    ]
+                }, 
+                "text": {
+                    "$id": "/properties/options/items/properties/value", 
+                    "type": "string", 
+                    "title": "The Value Schema ", 
+                    "default": "", 
+                    "examples": [
+                        "string"
+                    ]
+                }
+            }
+            }
+        }, 
+        "lookupList": {
+            "$id": "/properties/lookupList", 
+            "type": "string", 
+            "title": "The Lookuplist Schema ", 
+            "default": "", 
+            "examples": [
+            "string"
+            ]
+        }, 
+        "keyField": {
+            "$id": "/properties/keyField", 
+            "type": "string", 
+            "title": "The Keyfield Schema ", 
+            "default": "", 
+            "examples": [
+            "string"
+            ]
+        }, 
+        "valueField": {
+            "$id": "/properties/valueField", 
+            "type": "string", 
+            "title": "The Valuefield Schema ", 
+            "default": "", 
+            "examples": [
+            "string"
+            ]
+        }, 
+        "orderBy": {
+            "$id": "/properties/orderBy", 
+            "type": "string", 
+            "title": "Order lookup dropdown options by which field", 
+            "default": "",
+            "examples": [
+                "Title",
+                "Created"
+            ]
+        },
+        "storeValue":{
+            "$id": "/properties/storeValue", 
+            "type": "string", 
+            "title": "Save the value or key to SharePoint?", 
+            "default": "key",
+            "enum": [
+                "key",
+                "valued"
+            ],
+            "examples": [
+                "key",
+                "valued"
+            ]
+        },
+        "validator": {
+            "$id": "/properties/validator", 
+            "type": "string", 
+            "title": "The Validator Schema ", 
+            "default": "", 
+            "examples": [
+            "string"
+            ]
+        }, 
+        "required": {
+            "$id": "/properties/required", 
+            "type": "boolean", 
+            "title": "The Required Schema ", 
+            "default": false, 
+            "examples": [
+            true
+            ]
+        },
+        "columnSpan":{
+            "$id": "/properties/columnSpan", 
+            "type": "integer", 
+            "title": "The number of grid columns to span", 
+            "default": 1
+        },
+        "styleString":{
+            "$id": "/properties/columnSpan", 
+            "type": "string",
+            "title":"Stringified JSON styles",
+            "examples": [
+                "{\"backgroundColor\": \"blue\"}"
+            ]
+        },
+        "dontSave":{
+            "$id": "/properties/dontSave", 
+            "type": "boolean", 
+            "title": "Don't save this field, use for templating purposes such as hiding or showing fields", 
+            "default": false, 
+            "examples": [
+            true
+            ]
+        },
+        "prefix":{
+            "$id": "/properties/prefix", 
+            "type": "string",
+            "title":"Field prefix value",
+            "examples": [
+                "$",
+                "Monthly:"
+            ]
+        },
+        "suffix":{
+            "$id": "/properties/suffix", 
+            "type": "string",
+            "title":"Field suffix value",
+            "examples": [
+                "Kg",
+                "Km/Hr"
+            ]
+        },
+        "min":{
+            "$id": "/properties/min", 
+            "type": ["integer", "string"],
+            "title":"Field minimum value",
+            "examples":[
+                1,
+                100,
+                "1/1/2018"
+            ]
+        },
+        "max":{
+            "$id": "/properties/min", 
+            "type": ["integer", "string"],
+            "title":"Field maximum value",
+            "examples":[
+                1,
+                100,
+                "1/1/2018"
+            ]
+        },
+        "visibleIf":{
+            "$id":"/properties/visibleIf",
+            "type":"array",
+            "title":"Conditional to hide the field",
+            "items": {
+                "type":"object",
+                "properties": {
+                    "operator":{
+                          "$id":"/properties/visibleIf/operator",
+                          "type":"string",
+                          "enum":[
+                              "==",
+                              "!=",
+                              "<=",
+                              ">=",
+                              "<",
+                              ">"
+                          ]
+                    },
+                    "field":{
+                        "$id":"/properties/visibleIf/field",
+                        "type":"string",
+                        "title":"Name of field to check",
+                        "examples":[
+                            "Title"
+                        ]
+                    },
+                    "value":{
+                        "$id":"/properties/visibleIf/field",
+                        "type":"string",
+                        "title":"Value to check",
+                        "examples":[
+                            "Item Title"
+                        ]
+                    }
+                },
+                "required": [
+                    "operator",
+                    "field",
+                    "value"
+                ]
+            }
+        }
+    },
+    "required": []
+}

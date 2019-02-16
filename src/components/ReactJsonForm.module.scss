@@ -1,0 +1,30 @@
+@import '../../node_modules/office-ui-fabric-react/dist/sass/Fabric.scss';
+
+.formContainer{
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border: $ms-color-neutralTertiary solid 1px;
+  box-shadow: $ms-color-neutralQuaternary 2px 2px 2px;
+  padding: 0;
+
+  .formHeader{
+    background-color: $ms-color-themePrimary;
+    color: $ms-color-white;
+    margin: 0;
+    padding: 10px 20px;
+  }
+
+  .bodyPadding{
+    padding: 20px;
+  }
+
+  .formFooter{
+    padding: 20px;
+  }
+}
+
+.panelDescription{
+    margin: 0 0 30px 40px;
+    font-style: italic;
+}

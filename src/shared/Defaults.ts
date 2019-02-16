@@ -1,0 +1,39 @@
+import { IPartialTheme } from 'office-ui-fabric-react/lib/Styling';
+import { IReactJsonFormProps } from '../index';
+import { PanelType } from 'office-ui-fabric-react/lib/Panel';
+// tslint:disable
+const defaultTheme: IPartialTheme = {
+  palette: {
+    themePrimary: '#0078d4',
+    themeLighterAlt: '#eff6fc',
+    themeLighter: '#deecf9',
+    themeLight: '#c7e0f4',
+    themeTertiary: '#71afe5',
+    themeSecondary: '#2b88d8',
+    themeDarkAlt: '#106ebe',
+    themeDark: '#005a9e',
+    themeDarker: '#004578',
+    neutralLighterAlt: '#f8f8f8',
+    neutralLighter: '#f4f4f4',
+    neutralLight: '#eaeaea',
+    neutralQuaternaryAlt: '#dadada',
+    neutralQuaternary: '#d0d0d0',
+    neutralTertiaryAlt: '#c8c8c8',
+    neutralTertiary: '#c2c2c2',
+    neutralSecondary: '#858585',
+    neutralPrimaryAlt: '#4b4b4b',
+    neutralPrimary: '#333333',
+    neutralDark: '#272727',
+    black: '#1d1d1d',
+    white: '#ffffff',
+  },
+};
+// tslint: enable
+
+const defaults: Partial<IReactJsonFormProps> = {
+  maxWidth: 800,
+  theme: defaultTheme,
+  panelType: PanelType.smallFixedFar
+};
+
+export default defaults;

@@ -1,10 +1,23 @@
 {
-  "name": "flow-button",
-  "version": "1.0.0",
+  "name": "react-json-form",
+  "version": "1.0.1",
   "description": "This package simply creates a button which triggers a Microsoft Flow with a HTTP trigger.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json",
+    "build":"tsc && node-sass --recursive --output dist --source-map true --source-map-contents src",
+    "build:webpack": "webpack --config webpack.prod.js",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "serve": "webpack-dev-server --config webpack.dev.js",
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -19,5 +32,53 @@
   "bugs": {
     "url": "https://github.com/androidpage/flow-button/issues"
   },
-  "homepage": "https://github.com/androidpage/flow-button#readme"
+  "homepage": "https://github.com/androidpage/flow-button#readme",
+  "dependencies": {
+    "ajv": "^6.7.0",
+    "office-ui-fabric-react": "^5.134.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-dropzone": "^8.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-links": "^4.1.11",
+    "@storybook/addons": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.21",
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-dropzone": "^4.2.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "css-loader": "^1.0.1",
+    "http-server": "^0.11.1",
+    "jest": "^23.6.0",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.15.3",
+    "sass-loader": "^7.1.0",
+    "source-map": "^0.7.3",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.3.1",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "resolutions": {
+    "terser": "3.14.1"
+  },
+  "files": [
+    "dist/"
+  ]
 }

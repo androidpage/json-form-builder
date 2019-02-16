@@ -1,0 +1,8 @@
+# dist
+dist
+package.json
+
+# config files
+.*
+**/tsconfig.json
+**/webpack.config.js
