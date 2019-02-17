@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.ts',
@@ -36,6 +37,16 @@ module.exports = {
         enforce: 'pre', 
         test: /\.js$/, 
         loader: 'source-map-loader' 
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
   },
@@ -43,7 +54,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new webpack.WatchIgnorePlugin([
       /css\.d\.ts$/
-    ])
+    ]),
+    //new BundleAnalyzerPlugin()
   ],
   externals: {
     'react': 'commonjs react'
