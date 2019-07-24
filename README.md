@@ -42,7 +42,7 @@ export enum EDisplayMode{
 ```json
 {
 
-    "$id": "https://pbo.vic.gov.au/schemas/form.schema.json", 
+    "$id": "https:///schemas/form.schema.json", 
     "type": "object", 
     "properties": {
     "title": {
@@ -247,7 +247,7 @@ export enum EDisplayMode{
 # Field Schema
 ```json
 {
-    "$id": "https://pbo.vic.gov.au/schemas/field.schema.json",  
+    "$id": "https:///schemas/field.schema.json",  
     "type": "object", 
     "properties": {
         "label": {
