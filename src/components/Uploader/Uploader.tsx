@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Dropzone, { DropzoneRenderArgs } from 'react-dropzone';
+import Dropzone from 'react-dropzone';
 
 export interface IUploaderProps{
 

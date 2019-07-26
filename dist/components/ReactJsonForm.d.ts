@@ -12,6 +12,7 @@ export interface IReactJsonFormProps<T extends object = {}> {
     panelType?: PanelType;
     saveAction: (formObject: any) => boolean | Promise<boolean>;
     cancelAction: () => void;
+    onFormDataChange?: (formIsValid: boolean, formData: object) => void;
     successMessage?: string;
     failMessage?: string;
     variables?: T;
@@ -25,11 +26,13 @@ export declare class ReactJsonForm<T extends object = {}> extends React.Componen
     constructor(props: IReactJsonFormProps<T>);
     componentDidMount(): Promise<void>;
     render(): JSX.Element;
+    save(): boolean | Promise<boolean>;
     private customPanelHeaderRenderer;
     private handleFieldChange;
     private getRequiredFields;
     private checkRequiredFields;
     private fillDefinitionVars;
+    private formIsValid;
     private saveAction;
     private cancelAction;
 }

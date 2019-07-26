@@ -1,6 +1,6 @@
 {
 
-    "$id": "https://pbo.vic.gov.au/schemas/form.schema.json", 
+    "$id": "https:///schemas/form.schema.json", 
     "type": "object", 
     "properties": {
     "title": {

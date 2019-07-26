@@ -23,7 +23,7 @@ export default class FormBody extends React.Component<IFormBodyProps, IFormBodyS
             {
               def.fields && def.fields.map((field: IFieldDefinition) => {
                 return (
-                  <FormField definition={ field } onFieldChange={ this.props.fieldChangeHandler } />
+                  <FormField definition={ field } onFieldChange={ this.props.fieldChangeHandler } key={ field.fieldName } />
                 )
               })
             }

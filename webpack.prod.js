@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
+      {
         test: /\.scss$/, 
         include: [path.join(__dirname, 'src')],
         use: [
@@ -31,7 +31,8 @@ module.exports = {
       },
       { 
         test: /\.tsx?$/, 
-        loader: 'awesome-typescript-loader' 
+        loader: 'ts-loader',
+        exclude: /node_modules/
       },
       { 
         enforce: 'pre', 
@@ -51,13 +52,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new webpack.WatchIgnorePlugin([
       /css\.d\.ts$/
     ]),
     //new BundleAnalyzerPlugin()
   ],
   externals: {
-    'react': 'commonjs react'
+    //'react': 'commonjs react'
   }
 }

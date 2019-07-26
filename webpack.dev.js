@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: './temp/temp.tsx',
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dev'),
     filename: 'bundle.js'
@@ -26,7 +27,8 @@ module.exports = {
       },
       { 
         test: /\.tsx?$/, 
-        loader: 'awesome-typescript-loader' 
+        loader: 'ts-loader',
+        exclude: /node_modules/
       },
       { 
         enforce: 'pre', 

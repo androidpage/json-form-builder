@@ -25,6 +25,7 @@ export interface IReactJsonFormProps<T extends object = {}>{
   // Save function, return a boolean so form can display either success or failure message
   saveAction: (formObject: any) => boolean | Promise<boolean>;
   cancelAction: () => void;
+  onFormDataChange?: (formIsValid: boolean, formData: object) => void;
   successMessage?: string;
   failMessage?: string;
   // Dynamic form data array - this is for dynamically loaded dropdown values etc.
@@ -125,6 +126,10 @@ export class ReactJsonForm<T extends object = {}> extends React.Component<IReact
     }
   }
 
+  public save(){
+    return this.saveAction();
+  }
+
   private customPanelHeaderRenderer(props?: IPanelProps, defaultRenderer?: IPanelHeaderRenderer){
       const def = this.state.definition;
       const description = def ? def.description : false;
@@ -146,9 +151,15 @@ export class ReactJsonForm<T extends object = {}> extends React.Component<IReact
     const formObject = this.state.formObject;
     Object.assign(formObject, fieldObject);
 
+    const isValid = this.formIsValid();
+    
     this.setState({
       formObject
     });
+
+    if(this.props.onFormDataChange){
+      this.props.onFormDataChange(isValid, formObject);
+    }
   }
 
   private getRequiredFields(definition: IFormDefinition){
@@ -196,9 +207,17 @@ export class ReactJsonForm<T extends object = {}> extends React.Component<IReact
     return def;
   }
 
+  private formIsValid(): boolean{
+    const requiredFields: IFieldDefinition[] | undefined = this.getRequiredFields(this.props.definition);
+    const isValid = this.checkRequiredFields(this.state.formObject, requiredFields);
+
+    return isValid;
+  }
+
   private saveAction(): boolean | Promise<boolean>{
     const requiredFields: IFieldDefinition[] | undefined = this.getRequiredFields(this.props.definition);
     const isValid = this.checkRequiredFields(this.state.formObject, requiredFields);
+
     if(isValid){
       return this.props.saveAction(this.state.formObject)
     }

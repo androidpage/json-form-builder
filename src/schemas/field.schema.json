@@ -1,5 +1,5 @@
 {
-    "$id": "https://pbo.vic.gov.au/schemas/field.schema.json",  
+    "$id": "https:///schemas/field.schema.json",  
     "type": "object", 
     "properties": {
         "label": {

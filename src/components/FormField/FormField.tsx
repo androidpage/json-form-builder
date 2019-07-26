@@ -17,7 +17,7 @@ export interface IFormFieldProps{
 }
 
 export interface IFormFieldState{
-
+  currentValue: any;
 }
 
 export default class FormField extends React.Component<IFormFieldProps, IFormFieldState>{
@@ -64,6 +64,7 @@ export default class FormField extends React.Component<IFormFieldProps, IFormFie
           isRequired: def.required || false,
           label: def.label,
           onSelectDate: this.onFieldChange.bind(this, undefined),
+          value: this.state.currentValue,
           strings: DayPickerStrings,
         }
         return (
